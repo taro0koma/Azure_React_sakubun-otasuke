@@ -22,7 +22,7 @@ const ChatWithAI = () => {
 
     try {
       // Call the Python API
-      const response = await fetch("https://react-sakubun-otasuke-azure-openai.onrender.com/api/chat", {
+      const response = await fetch(process.env.REACR_APP_AZURE_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

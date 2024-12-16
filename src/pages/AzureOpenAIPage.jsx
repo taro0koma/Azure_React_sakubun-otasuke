@@ -13,7 +13,6 @@ const ChatWithAI = () => {
 
     setLoading(true);
 
-    // Update chat history with the user's message
     const updatedChatHistory = [
       ...chatHistory,
       { role: "user", content: userMessage },
@@ -21,8 +20,7 @@ const ChatWithAI = () => {
     setChatHistory(updatedChatHistory);
 
     try {
-      // Call the Python API
-      const response = await fetch(process.env.REACR_APP_AZURE_URL, {
+      const response = await fetch(process.env.REACT_APP_AZURE_URL, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -37,7 +35,6 @@ const ChatWithAI = () => {
       const data = await response.json();
       setAiResponse(data.reply);
 
-      // Update chat history with the AI's response
       setChatHistory([
         ...updatedChatHistory,
         { role: "assistant", content: data.reply },
@@ -47,7 +44,7 @@ const ChatWithAI = () => {
       setAiResponse("Error: Unable to fetch AI response.");
     } finally {
       setLoading(false);
-      setUserMessage(""); // Clear input field
+      setUserMessage("");
     }
   };
 
@@ -59,8 +56,7 @@ const ChatWithAI = () => {
             key={index}
             className={message.role === "user" ? "user-message" : "ai-message"}
           >
-            <strong>{message.role === "user" ? "User:" : "AI:"}</strong>{" "}
-            {message.content}
+            <strong>{message.role === "user" ? "User:" : "AI:"}</strong> {message.content}
           </div>
         ))}
       </div>

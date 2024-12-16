@@ -1,0 +1,164 @@
+/* 現在のスタイルのまま */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0; /* フェイドインの初期状態 */
+  animation: fadeIn 0.5s forwards; /* アニメーションの適用 */
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1; /* フェイドイン後の状態 */
+  }
+}
+
+.modal-content {
+  background: white;
+  padding: 50px 30px 30px 0; /* 増加させたパディング */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* 追加 */
+  max-width: 100%; /* 増加させた最大幅 */
+  width: 95%;
+  height: calc(100vh - 230px);
+  box-sizing: border-box; /* パディングを含めてサイズを設定 */
+  display: flex !important;
+  justify-content: space-between; /* コンテンツを左右に配置 */
+  align-items: flex-start; /* 上部揃え */
+  max-width: 800px;
+  border-left: 30px solid #00920c;
+}
+
+.close-button {
+  padding: 0 !important;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #000000;
+  color: white !important;
+  border: none;
+  border-radius: 50%; /* 完全に丸いボタンにする */
+  width: 30px; /* ボタンの幅 */
+  height: 30px; /* ボタンの高さ */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 16px !important;
+  cursor: pointer;
+  z-index: 1100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.modal-header {
+  margin-bottom: 20px;
+}
+
+.modal-header h2 {
+  margin: 0 0 0 10px;
+  font-weight: bold;
+  font-size: 2rem !important;
+}
+
+.modal-body {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.modal-body p {
+  margin: 10px 0 30px 10px;
+  font-size: 18px !important;
+  overflow-y: scroll;
+  scrollbar-color: rgb(171, 171, 171) rgb(238, 238, 238);
+  scrollbar-width: thin;
+  height: 130px;
+}
+
+.hazinogazou img {
+  margin: 0 30px;
+  max-width: 100% !important;
+  width: auto !important; /* 画像をコンテナの幅に合わせる */
+  height: 100% !important; /* 画像のアスペクト比を維持 */
+  top: 50%;
+}
+
+.modal-text {
+  flex: 1; /* 残りのスペースを占める */
+  padding-left: 20px; /* テキストと画像の間のスペース */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  display: block !important;
+  text-align: left !important;
+}
+
+.tukattemiyo {
+  position: absolute; /* 追加 */
+  bottom: 10px; /* 追加: モーダルの底からの距離 */
+  right: 10px; /* 追加: モーダルの右端からの距離 */
+  left: 50%;
+  font-weight: 100;
+  transform: translateX(-50%);
+  font-size: 20px;
+  padding: 0 10px;
+  transition: background-color 0.3 ease;
+}
+
+.modal-header h1 {
+  font-size: 3rem !important;
+  font-weight: bold;
+  padding: 10px 0 0 10px;
+}
+
+/* メディアクエリ追加: 画面幅が768px以下の場合 */
+/* メディアクエリ追加: 画面幅が768px以下の場合 */
+@media (max-width: 768px) {
+  .modal-content {
+    flex-direction: column; /* 縦並びに変更 */
+    padding: 20px; /* パディングの調整 */
+    height: 80%; /* 高さを自動調整 */
+  }
+
+  .modal-body {
+    overflow-y: auto;
+    margin-bottom: 40px; /* モーダル下部に余白を追加 */
+  }
+
+  .modal-text {
+    align-items: flex-start; /* 左揃えに変更 */
+    padding-left: 0; /* 左側のパディングを削除 */
+  }
+
+  .hazinogazou {
+    display: flex;
+    justify-content: center; /* 横のセンターに配置 */
+    margin-bottom: 20px; /* 下部に余白を追加 */
+    width: 15em; /* コンテナの幅を全体に設定 */
+    margin: auto;
+  }
+
+  .hazinogazou img {
+    max-width: 100%; /* コンテナの幅に合わせて最大幅を設定 */
+    height: auto; /* 高さは自動調整 */
+    width: 24rem;
+    object-fit: cover;
+    object-position: center;
+  }
+  .modal-body p {
+    margin: 10px 0 30px 10px;
+        font-size: 1.4rem !important;
+        overflow-y: scroll;
+        scrollbar-color: rgb(171, 171, 171) rgb(238, 238, 238);
+        scrollbar-width: initial;
+        height: 5em;
+        line-height: 1.3em;
+  }
+}

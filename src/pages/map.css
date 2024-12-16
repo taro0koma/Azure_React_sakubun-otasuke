@@ -1,0 +1,217 @@
+@keyframes slideOutLeft{
+  0% {
+      transform: translateX(0px);
+  }
+  100% {
+      transform: translateX(420px);
+  }
+}
+@keyframes slideOutRight{
+  0% {
+      transform: translateX(420px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes slide{
+  0% {
+      transform: translateX(90%);
+  }
+  100% {
+      transform: translateX(0);
+  }
+}
+
+.react-flow .react-flow__handle {
+  width: 30px;
+  height: 14px;
+  border-radius: 3px;
+  background-color: #784be8;
+}
+
+.react-flow .react-flow__handle-top {
+  top: -10px;
+}
+
+.react-flow .react-flow__handle-bottom {
+  bottom: -10px;
+}
+
+.react-flow .react-flow__node {
+  height: 40px;
+  width: 150px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  border-width: 2px;
+  font-weight: 700;
+}
+
+.react-flow .react-flow__edge path,
+.react-flow__connectionline path {
+  stroke-width: 2;
+}
+
+.wrapper {
+  flex-grow: 1;
+  height: 100%;
+}
+/* src/pages/ImagemapPage.css または適切なCSSファイルに追加 */
+.node-input {
+  margin: 10px 0;
+  padding: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+}
+
+.node-input label {
+  margin-right: 10px;
+}
+
+.node-input input {
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.node {
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+  color: white; /* ノードのテキスト色 */
+}
+
+/* ポートのスタイルをカスタマイズする */
+.react-flow__node-input .react-flow__port {
+  background-color: var(--port-bg-color, #ddd); /* デフォルトの背景色 */
+}
+
+/* ノードのポートに色を適用するためにカスタムプロパティを使う */
+.node.port-top-left, .node.port-bottom-right {
+  --port-bg-color: #FF5722; /* 例: ポートの背景色を指定 */
+}
+/* 色をランダムに設定する場合の CSS 例 */
+
+
+/* 例: すべてのハンドルの背景色を変更する */
+.react-flow__handle.react-flow__handle-bottom,
+.react-flow__handle.react-flow__handle-top {
+  background: url(/images/icon_stone.svg)#82b1ff; /* デフォルトの色 */
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.react-flow__nodes .react-flow__node:nth-child(5n+1) .react-flow__handle{
+  background:url(/images/icon_stone.svg)#a7ffeb;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.react-flow__nodes .react-flow__node:nth-child(5n+2) .react-flow__handle{
+  background: url(/images/icon_stone.svg)#8c9eff;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.react-flow__nodes .react-flow__node:nth-child(5n+3) .react-flow__handle{
+  background: url(/images/icon_stone.svg)#ea80fc;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.react-flow__nodes .react-flow__node:nth-child(5n+4) .react-flow__handle{
+  background: url(/images/icon_stone.svg)#b388ff;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+.react-flow__nodes .react-flow__node .react-flow__handle{
+  cursor: url('/images/hipparu.svg')40 40,auto;
+}
+
+
+.node-edge-info {
+  animation-name: slidet;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  width: 500px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  position: absolute;
+  right: 4px;
+  top: 72px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ccc;
+  padding: 10px;
+  overflow-y: auto;
+  height: 600px;
+  margin: auto 0;
+  text-align: left;
+  display: flex;
+}
+.react-flow__panel.react-flow__attribution.bottom.right{
+  display: none;
+}
+.chatsousin{
+  height: fit-content;
+  margin: auto 0 30px auto;
+  display: flex;
+}
+
+.node-edge-info.sideOutLeft {
+  animation-name: slideOutLeft;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+.node-edge-info.sideOutRight {
+  animation-name: slideOutRight;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+}
+.akesimebutton {
+  height: 70%;
+  margin: auto 0;
+  display: block;
+  width: 10px;
+  font-size: 20px !important;
+}
+.node-input .nodebox{
+  font-size: 20px;
+  font-weight: bold;
+  color: #000 !important;
+  background-color: #FFF;
+  text-align: center;
+  width: 100%;
+  max-width: 960px;
+  box-shadow: 0px 2px 1px #d7d7d7, inset 3px 3px 3px rgba(0, 0, 0, 0.2);
+  border: 4px solid #565656;
+  border-radius: 10px;
+  height: 80px;
+}
+.imagemapbun{
+  font-size: 0.9em;
+  line-height: 1.5;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  background-color: #FFFFFF;
+}
+.react-flow__pane.draggable{
+  background: url("/images/bg_hougan.png");
+}
+.download-btn{
+  left: 0 !important;
+  right: 100% !important;
+}
+.react-flow__panel.top{
+  margin-left: 0 !important;
+  padding-left: 0;
+  position: absolute;
+  top: 5rem;
+}
+.react-flow .react-flow__node{
+  height: auto !important;
+  line-height: 100%;
+}
+.react-flow__node.react-flow__node-input.nopan.selected.selectable.draggable{
+  word-break: break-word;
+  hyphens: auto;
+  line-break: strict;
+}

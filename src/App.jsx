@@ -20,6 +20,7 @@ import NotFound from "./pages/NotFound";
 import MyComponent from "./pages/ScreenshotPage";
 import ChatBot from "./pages/ChatBot";
 import { HelmetProvider } from "react-helmet-async";
+import ChatWithAI from "./pages/AzureOpenAIPage";
 
 
 //今度Basic認証を付けるときは下のURLにアクセスし、コードを変更しよう！
@@ -47,6 +48,7 @@ const App = () => {
               <Route path="/swiper" element={<SwiperPage />} />
               <Route path="/sksyo" element={<MyComponent />} />
               <Route path="/chatBot" element={<ChatBot />} />
+              <Route path="/testtest" element={<ChatWithAI />} />
               <Route path="/*" element={<NotFound />} />
             </Routes>
           </BrowserRouter>

@@ -20,7 +20,7 @@ const ChatWithAI = () => {
     setChatHistory(updatedChatHistory);
 
     try {
-      const response = await fetch(process.env.REACT_APP_AZURE_URL, {
+      const response = await fetch(process.env.REACT_APP_AZURE_URL+"/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

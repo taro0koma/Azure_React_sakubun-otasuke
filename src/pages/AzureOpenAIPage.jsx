@@ -20,7 +20,7 @@ const ChatWithAI = () => {
     setChatHistory(updatedChatHistory);
 
     try {
-      const response = await fetch(process.env.REACT_APP_AZURE_URL+"/api/chat", {
+      const response = await fetch("https://react-sakubun-otasuke-azure-openai.onrender.com/api/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

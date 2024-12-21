@@ -129,6 +129,9 @@ const ChatWithAI = () => {
       }
     } catch (error) {
       console.error("処理中にエラーが発生しました : ", error);
+      const data = await response.json();
+      const parsedData = data.bot.trim();
+      console.log(parsedData);
     }
   };
 

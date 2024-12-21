@@ -116,9 +116,11 @@ const ChatWithAI = () => {
       } else {
         setLoading([...loading, { role: 'ai', content:""}])
         const err = await response.text();
+        const parsedData = data.bot.trim();
         setMessage(
-          "段落の組み立て作成がうまくいきませんでした。もう一度入力してください。"
+          "段落の組み立て作成がうまくいきませんでした。もう一度入力してください。"+parsedData
         );
+        console.log(parsedData)
         alert(err);
       }
       // const answerArrayString = result.choices[0].text.trim();

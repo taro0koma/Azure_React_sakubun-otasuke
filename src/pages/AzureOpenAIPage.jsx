@@ -103,8 +103,8 @@ const ChatWithAI = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: userMessage,gakunen: formObj.grade }),
+        mode:'cors'
       });
-      console.log(response);
 
       if (response.ok) {
         ok = "ok";
@@ -115,9 +115,11 @@ const ChatWithAI = () => {
         setLoading([...loading, { role: 'ai', content:""}])
       } else {
         setLoading([...loading, { role: 'ai', content:""}])
+        const err = await response.text();
         setMessage(
-          "段落の組み立て作成がうまくいきませんでした。もう一度入力してください。"+parsedData
+          "段落の組み立て作成がうまくいきませんでした。もう一度入力してください。"
         );
+        alert(err);
       }
       // const answerArrayString = result.choices[0].text.trim();
       if (answers.length > 0) {
@@ -129,9 +131,6 @@ const ChatWithAI = () => {
       }
     } catch (error) {
       console.error("処理中にエラーが発生しました : ", error);
-      const data = await response.json();
-      console.log(data);
-      const parsedData = data.bot.trim();
     }
   };
 

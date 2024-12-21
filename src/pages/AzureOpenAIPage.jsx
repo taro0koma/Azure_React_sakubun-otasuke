@@ -105,6 +105,7 @@ const ChatWithAI = () => {
         body: JSON.stringify({ prompt: userMessage,gakunen: formObj.grade }),
         mode:'no-cors'
       });
+      console.log(response);
 
       if (response.ok) {
         ok = "ok";

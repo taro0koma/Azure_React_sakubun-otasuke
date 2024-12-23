@@ -103,7 +103,7 @@ const ChatWithAI = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: userMessage,gakunen: formObj.grade }),
-        mode:'cors'
+        mode:'no-cors'
       });
 
       if (response.ok) {

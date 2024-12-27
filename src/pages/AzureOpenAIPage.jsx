@@ -105,15 +105,20 @@ const ChatWithAI = () => {
         body: JSON.stringify({ prompt: userMessage,gakunen: formObj.grade }),
         mode:'cors'
       });
+      console.log("try文の中に突入！")
 
       if (response.ok) {
+        console.log("responseOK!")
         ok = "ok";
         console.log(userMemo);
         const data = await response.json();
+        console.log("データ取ってきたよ！"+data)
         const parsedData = data.bot.trim();
+        console.log("データをいじってみたよ！"+parsedData)
         addAnswer(parsedData, true);
         setLoading([...loading, { role: 'ai', content:""}])
       } else {
+        console.log("responseOKじゃなかった・・・")
         setLoading([...loading, { role: 'ai', content:""}])
         const err = await response.text();
         setMessage(

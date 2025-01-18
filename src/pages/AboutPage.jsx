@@ -4,6 +4,7 @@ import ModalFrame from "../component/ModalFrame";
 import SwiperPage from './swiperPage';
 import NextPageLink from './../component/NextPageLink';
 import { Helmet } from 'react-helmet-async';
+import Footer from './Footer';
 
 const AboutPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -32,6 +33,7 @@ const AboutPage = () => {
       <a href="/danraku"><button>▶ 段落の組み立てを使ってみる</button></a>
       <div className="spacer" style={{height:100}}></div>
       <NextPageLink imairu="imagemap1"/>
+      <Footer/>
     </div>
   );
 };

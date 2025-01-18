@@ -6,6 +6,7 @@ import ModalFrame from "../component/ModalFrame";
 import AnimationKomawanPage from "./AnimationKomawanPage";
 import { Helmet } from "react-helmet-async";
 import NextPageLink from "../component/NextPageLink";
+import Footer from "./Footer";
 
 const supabase = createClient(
   process.env.REACT_APP_SUPABASE_URL,
@@ -106,7 +107,7 @@ const ConsolePage = () => {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: userMessage,gakunen:selectedGrade }),
-        mode:'cors'
+        mode:"cors"
       });
 
       if (response.ok) {
@@ -189,14 +190,16 @@ const ConsolePage = () => {
         <br />
         かっこいい書き出しを発見！
       </h3>
+      
       {isModalOpen && (
+        <div className="saisyonihyouzisuruhurothinghuremu">
         <ModalFrame
           title="かっこいい書き出しおみくじ"
           text="どうやったらかっこいい書き出しになるのかわからない・・・そんな時はおみくじをつかってお気に入りの書き出しを見つけよう。自分の作文に合わせた言葉が変えられるように例文もついているよ。"
           onClose={handleModalClose}
           imageSrc="/images/kakenaiwan.png"
           midashi="作文の書き出しがかっこいいとなんかうれしい"
-        ></ModalFrame>
+        ></ModalFrame></div>
       )}
       <img
         ref={myImg}
@@ -285,6 +288,7 @@ const ConsolePage = () => {
         {kakidashis.length === 0 && !isAiLoading && <p></p>}
       </div>
       <NextPageLink imairu="kakidashi1"/>
+      <Footer/>
     </div>
   );
 };

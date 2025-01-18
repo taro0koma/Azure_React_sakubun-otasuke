@@ -4,6 +4,7 @@ import ModalFrame from "../component/ModalFrame";
 import SwiperPage from './swiperPage';
 import NextPageLink from '../component/NextPageLink';
 import { Helmet } from 'react-helmet-async';
+import Footer from './Footer';
 
 const GenkoyoshiPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -45,6 +46,7 @@ const GenkoyoshiPage = () => {
       <SwiperPage gazou1="/images/sakubunMap1.png" gazou2="/images/sakubunMap2.png" gazou3="/images/sakubunMap3.png" gazou4="/images/dokushokansouMap.png"/>
       <NextPageLink imairu="benri1"/>
       <br />
+      <Footer/>
       </div>
     </div>
   );

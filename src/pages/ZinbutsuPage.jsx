@@ -4,6 +4,7 @@ import AnimationKomawanPage from './AnimationKomawanPage';
 import ModalFrame from "../component/ModalFrame";
 import NextPageLink from '../component/NextPageLink';
 import { Helmet } from 'react-helmet-async';
+import Footer from './Footer';
 
 const HyougenPage = () => {
   const [isModalOpen, setIsModalOpen] = useState(true);
@@ -208,6 +209,7 @@ const HyougenPage = () => {
         </div>
       </div>
       <NextPageLink imairu="zinbutu1"/>
+      <Footer/>
     </div>
   );
 };

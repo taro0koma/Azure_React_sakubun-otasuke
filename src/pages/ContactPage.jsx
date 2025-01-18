@@ -6,6 +6,7 @@ import PreviousAndNext from "../component/PreviousAndNext";
 import ChatWithOpenAI from './../component/ChatWithOpenAI';
 import NextPageLink from "../component/NextPageLink";
 import { Helmet } from "react-helmet-async";
+import Footer from "./Footer";
 
 const supabase = createClient(
   process.env.REACT_APP_SUPABASE_URL,
@@ -171,6 +172,8 @@ const ContactPage = () => {
       {/* <PreviousAndNext midashi="知りたい気持ちがなかった！" honbun={honbun} buttontext="▶　使ってみる" buttonurl="/hyougen"/> */}
       <div className="spacer" style={{height:250}}></div>
       <NextPageLink imairu="kimochi1"/>
+      <br />
+      <Footer/>
     </div>
   );
 };

@@ -5,6 +5,7 @@ import PreviousAndNext from "../component/PreviousAndNext";
 import NextPageLink from './../component/NextPageLink';
 import { Helmet } from "react-helmet-async";
 import AnimationKomawanPage from "./AnimationKomawanPage";
+import Footer from "./Footer";
 
 const StylePage = () => {
 
@@ -516,6 +517,7 @@ const StylePage = () => {
       <NextPageLink imairu="danraku1"/>
       <PreviousAndNext midashi="書きたいことが決まっていない？" honbun={honbun} buttontext="▶　マップ作ってみる" buttonurl="/map"/>
       <div className="spacer" style={{height:400}}></div>
+      <Footer/>
     </div>
   );
 };
